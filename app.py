@@ -1,5 +1,6 @@
 import streamlit as st
 import requests
+import time
 from instaloader import Instaloader, Profile
 from facebook_scraper import get_profile
 from typing import Dict
@@ -55,6 +56,8 @@ num_of_cols = 3
 
 
 if col2.button("Run"):
+    with st.spinner("Now collecting..."):
+        time.sleep(3)
     filepath = "telegram.json"
     text = f"""
     ## Telegram Details
